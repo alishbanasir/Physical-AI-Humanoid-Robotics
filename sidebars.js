@@ -1,11 +1,10 @@
 // @ts-check
-
 /**
  * Sidebars configuration for Physical AI & Humanoid Robotics Textbook
  * @type {import('@docusaurus/plugin-content-docs').SidebarsConfig}
  */
 const sidebars = {
-  // Module 1: ROS 2 Fundamentals
+  // --- MERGED SIDEBAR (Docusaurus will display both modules in the 'Modules' dropdown) ---
   module1Sidebar: [
     {
       type: 'category',
@@ -19,18 +18,17 @@ const sidebars = {
         'module-1/chapter-4',
       ],
     },
-  ],
-
-  // Module 2: Digital Twin Simulation
-  module2Sidebar: [
+    // --- MODULE 2 IS MERGED HERE ---
     {
       type: 'category',
       label: 'Module 2: Digital Twin Simulation',
       collapsible: true,
       collapsed: false,
       items: [
-        'module-2/chapter-1',
-        // Additional chapters will be added incrementally
+        'module-2/chapter-1', // Chapter 1: Gazebo Physics Simulation
+        'module-2/high-fidelity-rendering', // Chapter 2: Unity Rendering & HRI
+        'module-2/simulating-sensors', // Chapter 3: Sensor Simulation
+        'module-2/integration-best-practices', // Chapter 4: Gazebo-Unity Integration
       ],
     },
   ],

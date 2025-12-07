@@ -1,0 +1,39 @@
+```mermaid
+sequenceDiagram
+    participant C as Action Client<br/>navigation_client
+    participant AS as Action Server<br/>navigation_server
+    participant R as Robot Base
+
+    Note over C,R: Asynchronous Goal-Oriented Pattern
+
+    C->>AS: Send Goal: navigate_to_pose<br/>{x: 5.0, y: 3.0, theta: 0.0}
+    AS->>C: Goal Accepted<br/>(goal_id: abc123)
+
+    activate AS
+    Note over AS,R: Begin execution
+
+    loop Every 200ms (Feedback)
+        AS->>R: Get current pose
+        R-->>AS: {x: 1.2, y: 0.8, theta: 0.1}
+        AS->>C: Feedback: {current_pose: (1.2, 0.8),<br/>distance_remaining: 4.1m}
+    end
+
+    alt Goal Succeeded
+        AS->>R: Reached target pose
+        AS->>C: Result: {success: true,<br/>final_error: 0.02m}
+        deactivate AS
+    else Goal Canceled
+        Note over C: User requests cancellation
+        C->>AS: Cancel Goal (abc123)
+        AS->>R: Stop motion
+        AS->>C: Result: {success: false,<br/>status: CANCELED,<br/>distance_remaining: 2.3m}
+        deactivate AS
+    else Goal Aborted
+        AS->>R: Obstacle detected
+        Note over AS: Cannot proceed safely
+        AS->>C: Result: {success: false,<br/>status: ABORTED,<br/>reason: "Obstacle blocking path"}
+        deactivate AS
+    end
+```
+
+**Figure**: Action communication pattern showing goal-oriented behavior with feedback. The client sends a goal asynchronously, receives periodic feedback updates, and eventually gets a final result. Actions support cancellation and provide detailed status information throughout execution.

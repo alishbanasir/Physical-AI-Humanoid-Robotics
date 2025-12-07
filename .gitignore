@@ -54,19 +54,5 @@ examples/ros2_ws/log/
 *.world~
 *.sdf~
 
-# Unity (examples only - Unity projects are educational content)
-examples/**/Library/
-examples/**/Temp/
-examples/**/Obj/
-examples/**/Build/
-examples/**/Builds/
-examples/**/Logs/
-examples/**/UserSettings/
-examples/**/*.csproj
-examples/**/*.unityproj
-examples/**/*.sln
-examples/**/*.suo
-examples/**/*.user
-examples/**/*.pidb
-examples/**/*.booproj
-examples/**/.vs/
+# Reserved Windows Keywords
+nul

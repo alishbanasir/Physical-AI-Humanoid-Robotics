@@ -1,0 +1,33 @@
+```mermaid
+sequenceDiagram
+    participant C as Service Client<br/>configuration_manager
+    participant S as Service Server<br/>robot_controller
+    participant R as Robot Hardware
+
+    Note over C,R: Synchronous Request-Reply Pattern
+
+    C->>S: Request: set_control_mode<br/>{mode: "velocity", max_speed: 1.5}
+    activate S
+    Note over S: Validate request<br/>Check mode is valid<br/>Check speed in range
+
+    alt Valid Request
+        S->>R: Apply configuration
+        R-->>S: Success
+        S->>C: Response: {success: true,<br/>message: "Mode changed to velocity"}
+    else Invalid Request
+        S->>C: Response: {success: false,<br/>message: "Invalid mode specified"}
+    end
+    deactivate S
+
+    Note over C: Process response<br/>Continue operation
+
+    Note over C,R: Another Service Call
+    C->>S: Request: get_battery_status
+    activate S
+    S->>R: Query battery
+    R-->>S: {voltage: 24.3, percentage: 78}
+    S->>C: Response: {voltage: 24.3,<br/>percentage: 78, status: "OK"}
+    deactivate S
+```
+
+**Figure**: Service request-reply communication pattern. The client sends a synchronous request to the server and blocks until receiving a response. This pattern is ideal for configuration changes, queries, and short-duration computations that return a result.

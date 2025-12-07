@@ -1,0 +1,66 @@
+```mermaid
+graph TB
+    subgraph "ROS 2 Application Layer"
+        N1[ROS 2 Node 1<br/>rclpy/rclcpp]
+        N2[ROS 2 Node 2<br/>rclpy/rclcpp]
+        N3[ROS 2 Node 3<br/>rclpy/rclcpp]
+    end
+
+    subgraph "RCL Layer (ROS Client Library)"
+        RCL[rcl - Common Core Logic<br/>Node management, Publishers, Subscribers]
+    end
+
+    subgraph "RMW Layer (ROS Middleware Interface)"
+        RMW[rmw - Middleware Abstraction<br/>Vendor-agnostic API]
+    end
+
+    subgraph "DDS Implementations (Pluggable)"
+        DDS1[FastDDS<br/>eProsima]
+        DDS2[CycloneDDS<br/>Eclipse]
+        DDS3[ConnextDDS<br/>RTI]
+    end
+
+    subgraph "DDS Standard Features"
+        DISC[Discovery Protocol<br/>PDP + EDP]
+        QOS[QoS Policies<br/>Reliability, Durability, History]
+        SER[Serialization<br/>CDR Format]
+        TRANS[Transport<br/>UDP/TCP/Shared Memory]
+    end
+
+    subgraph "Operating System / Network"
+        OS[Linux/Windows/macOS<br/>Network Stack]
+    end
+
+    N1 --> RCL
+    N2 --> RCL
+    N3 --> RCL
+    RCL --> RMW
+    RMW --> DDS1
+    RMW -.-> DDS2
+    RMW -.-> DDS3
+
+    DDS1 --> DISC
+    DDS1 --> QOS
+    DDS1 --> SER
+    DDS1 --> TRANS
+
+    DDS2 --> DISC
+    DDS2 --> QOS
+    DDS2 --> SER
+    DDS2 --> TRANS
+
+    DISC --> OS
+    TRANS --> OS
+
+    style N1 fill:#90EE90
+    style N2 fill:#90EE90
+    style N3 fill:#90EE90
+    style RCL fill:#87CEEB
+    style RMW fill:#FFD700
+    style DDS1 fill:#FFA07A
+    style DDS2 fill:#FFA07A
+    style DDS3 fill:#FFA07A
+    style OS fill:#D3D3D3
+```
+
+**Figure**: ROS 2 architecture layering showing the DDS middleware foundation. ROS 2 nodes use the RCL (ROS Client Library) which abstracts over the RMW (ROS Middleware) layer. The RMW provides a vendor-agnostic interface to pluggable DDS implementations (FastDDS, CycloneDDS, ConnextDDS). DDS handles discovery, QoS, serialization, and transport, all built on standard network protocols.

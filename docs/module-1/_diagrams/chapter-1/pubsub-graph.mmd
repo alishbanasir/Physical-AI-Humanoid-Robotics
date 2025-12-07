@@ -1,0 +1,26 @@
+```mermaid
+graph LR
+    subgraph "Publisher-Subscriber Communication Pattern"
+        P1[Publisher Node<br/>sensor_driver] -->|/laser_scan<br/>sensor_msgs/LaserScan| T1[Topic: /laser_scan]
+        T1 -->|subscribe| S1[Subscriber Node<br/>obstacle_detector]
+        T1 -->|subscribe| S2[Subscriber Node<br/>mapper]
+
+        P2[Publisher Node<br/>odometry_estimator] -->|/odom<br/>nav_msgs/Odometry| T2[Topic: /odom]
+        T2 -->|subscribe| S3[Subscriber Node<br/>localization]
+
+        S1 -->|/obstacles<br/>custom_msgs/ObstacleArray| T3[Topic: /obstacles]
+        T3 -->|subscribe| S4[Subscriber Node<br/>motion_planner]
+    end
+
+    style P1 fill:#90EE90
+    style P2 fill:#90EE90
+    style S1 fill:#87CEEB
+    style S2 fill:#87CEEB
+    style S3 fill:#87CEEB
+    style S4 fill:#87CEEB
+    style T1 fill:#FFD700
+    style T2 fill:#FFD700
+    style T3 fill:#FFD700
+```
+
+**Figure**: Publish-Subscribe communication graph showing multiple publishers and subscribers communicating through topics. Publishers (green) send messages to topics (yellow), which are consumed by subscribers (blue). This pattern enables decoupled, many-to-many communication.

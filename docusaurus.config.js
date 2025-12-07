@@ -5,13 +5,15 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Physical AI & Humanoid Robotics',
+  tagline: 'The Embodied AI Course',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -27,8 +29,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'governorhouse', // Usually your GitHub org/user name.
+  projectName: 'hackathon1-humanoid-robotics-book', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -51,6 +53,8 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: {
           showReadingTime: true,
@@ -74,6 +78,22 @@ const config = {
     ],
   ],
 
+  themes: ['@docusaurus/theme-mermaid'],
+
+  markdown: {
+    mermaid: true,
+  },
+
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV',
+      crossorigin: 'anonymous',
+    },
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -83,21 +103,20 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'My Site',
+        title: 'Physical AI & Humanoid Robotics',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Robot Logo',
+          src: 'img/logo.png',
         },
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'module1Sidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Modules',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/alishbanasir',
             label: 'GitHub',
             position: 'right',
           },
@@ -107,50 +126,50 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Physical AI & Humanoid Robotics',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                html: `
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <img src="/img/logo.png" alt="Robot Logo" style="height: 60px; width: auto;" />
+                    <span style="font-size: 1.1rem; font-weight: 600;">Physical AI & Humanoid Robotics</span>
+                  </div>
+                  <p style="font-size: 0.9rem; color: var(--ifm-footer-link-color); margin-top: 8px;">
+                    The Embodied AI Course
+                  </p>
+                `,
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'MODULES',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
+                label: 'Module 1: ROS 2 Fundamentals',
+                to: '/docs/module-1/ros2-architecture',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'MORE',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/alishbanasir',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/in/alishba-nasirr/',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © 2025 Physical AI & Humanoid Robotics Book Built by Alishba Nasir`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+        additionalLanguages: ['python', 'cpp', 'bash', 'yaml'],
       },
     }),
 };
