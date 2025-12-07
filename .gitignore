@@ -14,7 +14,59 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env*
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# Python (for code examples)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+.venv/
+venv/
+env/
+
+# Test outputs
+test-report.md
+**/test-report.md
+
+# ROS 2 / Gazebo
+examples/ros2_ws/build/
+examples/ros2_ws/install/
+examples/ros2_ws/log/
+*.world~
+*.sdf~
+
+# Unity (examples only - Unity projects are educational content)
+examples/**/Library/
+examples/**/Temp/
+examples/**/Obj/
+examples/**/Build/
+examples/**/Builds/
+examples/**/Logs/
+examples/**/UserSettings/
+examples/**/*.csproj
+examples/**/*.unityproj
+examples/**/*.sln
+examples/**/*.suo
+examples/**/*.user
+examples/**/*.pidb
+examples/**/*.booproj
+examples/**/.vs/
