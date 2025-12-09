@@ -62,9 +62,24 @@ const sidebars = {
             'textbook/module-3-ai-robot-brain/chapter-1-isaac-sim-setup/1-7-exercises',
           ],
         },
-        // Chapter 2: Hardware-Accelerated Perception (Isaac ROS, VSLAM) - Coming Soon
-        // Chapter 3: Reinforcement Learning (RL) Training - Coming Soon
-        // Chapter 4: Humanoid Navigation (Nav2 Integration) - Coming Soon
+        // Chapter 2: Hardware-Accelerated Perception (Isaac ROS, VSLAM)
+        {
+          type: 'doc',
+          id: 'textbook/module-3-ai-robot-brain/chapter-2-isaac-ros-perception/index',
+          label: 'Chapter 2: Isaac ROS Perception',
+        },
+        // Chapter 3: Reinforcement Learning (RL) Training
+        {
+          type: 'doc',
+          id: 'textbook/module-3-ai-robot-brain/chapter-3-rl-training/index',
+          label: 'Chapter 3: RL Training',
+        },
+        // Chapter 4: Humanoid Navigation (Nav2 Integration)
+        {
+          type: 'doc',
+          id: 'textbook/module-3-ai-robot-brain/chapter-4-nav2-integration/index',
+          label: 'Chapter 4: Nav2 Integration',
+        },
       ],
     },
   ],
