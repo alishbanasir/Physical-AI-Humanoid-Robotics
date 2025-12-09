@@ -31,6 +31,42 @@ const sidebars = {
         'module-2/integration-best-practices', // Chapter 4: Gazebo-Unity Integration
       ],
     },
+    // --- MODULE 3: THE AI-ROBOT BRAIN (NVIDIA ISAAC™) ---
+    {
+      type: 'category',
+      label: 'Module 3: The AI-Robot Brain (NVIDIA Isaac™)',
+      link: {
+        type: 'doc',
+        id: 'textbook/module-3-ai-robot-brain/index',
+      },
+      collapsible: true,
+      collapsed: false,
+      items: [
+        // Chapter 1: NVIDIA Isaac Sim Setup
+        {
+          type: 'category',
+          label: 'Chapter 1: Isaac Sim Setup',
+          link: {
+            type: 'doc',
+            id: 'textbook/module-3-ai-robot-brain/chapter-1-isaac-sim-setup/index',
+          },
+          collapsible: true,
+          collapsed: false,
+          items: [
+            'textbook/module-3-ai-robot-brain/chapter-1-isaac-sim-setup/1-1-architecture',
+            'textbook/module-3-ai-robot-brain/chapter-1-isaac-sim-setup/1-2-installation',
+            'textbook/module-3-ai-robot-brain/chapter-1-isaac-sim-setup/1-3-urdf-to-usd',
+            'textbook/module-3-ai-robot-brain/chapter-1-isaac-sim-setup/1-4-scene-creation',
+            'textbook/module-3-ai-robot-brain/chapter-1-isaac-sim-setup/1-5-ros2-integration',
+            'textbook/module-3-ai-robot-brain/chapter-1-isaac-sim-setup/1-6-python-scripting',
+            'textbook/module-3-ai-robot-brain/chapter-1-isaac-sim-setup/1-7-exercises',
+          ],
+        },
+        // Chapter 2: Hardware-Accelerated Perception (Isaac ROS, VSLAM) - Coming Soon
+        // Chapter 3: Reinforcement Learning (RL) Training - Coming Soon
+        // Chapter 4: Humanoid Navigation (Nav2 Integration) - Coming Soon
+      ],
+    },
   ],
 };
 
