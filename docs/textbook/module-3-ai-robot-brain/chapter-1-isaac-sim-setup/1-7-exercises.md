@@ -385,6 +385,6 @@ By combining Isaac Sim (simulation) with Isaac ROS (perception), you'll have a c
 
 ---
 
-**Ready for Chapter 2?** → [Chapter 2: Hardware-Accelerated Perception with Isaac ROS](../chapter-2-isaac-ros-perception/index.md)
+**Ready for Chapter 2?** → Chapter 2: Hardware-Accelerated Perception with Isaac ROS (Coming Soon)
 
 Or continue practicing Chapter 1 skills with the 10+ code examples in `examples/module-3/chapter-1-isaac-sim/`!

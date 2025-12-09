@@ -58,7 +58,7 @@ Module 3 consists of **4 chapters** covering the complete NVIDIA Isaac technolog
 
 ---
 
-### [Chapter 2: Hardware-Accelerated Perception](./chapter-2-isaac-ros-perception/)
+### Chapter 2: Hardware-Accelerated Perception (Coming Soon)
 
 **Estimated Time**: 6-8 hours
 **Prerequisites**: Chapter 1 (Isaac Sim configured with sensors)
@@ -78,7 +78,7 @@ Module 3 consists of **4 chapters** covering the complete NVIDIA Isaac technolog
 
 ---
 
-### [Chapter 3: Reinforcement Learning Training](./chapter-3-rl-training/)
+### Chapter 3: Reinforcement Learning Training (Coming Soon)
 
 **Estimated Time**: 8-10 hours
 **Prerequisites**: Chapter 1 (Isaac Sim robots), Chapter 2 (perception - optional for sensor observations)
@@ -99,7 +99,7 @@ Module 3 consists of **4 chapters** covering the complete NVIDIA Isaac technolog
 
 ---
 
-### [Chapter 4: Autonomous Navigation with Nav2](./chapter-4-nav2-navigation/)
+### Chapter 4: Autonomous Navigation with Nav2 (Coming Soon)
 
 **Estimated Time**: 6-8 hours
 **Prerequisites**: Chapter 1 (Isaac Sim environments), Chapter 2 (Isaac ROS perception for localization/costmaps), Chapter 3 (RL policies - optional for low-level control)
