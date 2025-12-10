@@ -148,6 +148,18 @@ const config = {
                 label: 'Module 1: ROS 2 Fundamentals',
                 to: '/docs/module-1/ros2-architecture',
               },
+              {
+                label: 'Module 2: Digital Twin Simulation',
+                to: '/docs/module-2/chapter-1',
+              },
+              {
+                label: 'Module 3: The AI-Robot Brain (NVIDIA Isaac)',
+                to: '/docs/textbook/module-3-ai-robot-brain',
+              },
+              {
+                label: 'Module 4: Vision-Language-Action (VLA)',
+                to: '/docs/textbook/module-4-vla',
+              },
             ],
           },
           {
