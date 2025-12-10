@@ -82,6 +82,43 @@ const sidebars = {
         },
       ],
     },
+    // --- MODULE 4: VISION-LANGUAGE-ACTION (VLA) ---
+    {
+      type: 'category',
+      label: 'Module 4: Vision-Language-Action (VLA)',
+      link: {
+        type: 'doc',
+        id: 'textbook/module-4-vla/index',
+      },
+      collapsible: true,
+      collapsed: false,
+      items: [
+        // Chapter 1: Voice-to-Action Pipeline with OpenAI Whisper
+        {
+          type: 'doc',
+          id: 'textbook/module-4-vla/chapter-1-voice-to-action/index',
+          label: 'Chapter 1: Voice-to-Action Pipeline',
+        },
+        // Chapter 2: Cognitive Planning with LLMs
+        {
+          type: 'doc',
+          id: 'textbook/module-4-vla/chapter-2-cognitive-planning/index',
+          label: 'Chapter 2: Cognitive Planning with LLMs',
+        },
+        // Chapter 3: Capstone Project - Autonomous Humanoid
+        {
+          type: 'doc',
+          id: 'textbook/module-4-vla/chapter-3-capstone-project/index',
+          label: 'Chapter 3: Capstone Project',
+        },
+        // Chapter 4: Advanced VLA & Real-World Deployment
+        {
+          type: 'doc',
+          id: 'textbook/module-4-vla/chapter-4-advanced-deployment/index',
+          label: 'Chapter 4: Advanced VLA & Deployment',
+        },
+      ],
+    },
   ],
 };
 
