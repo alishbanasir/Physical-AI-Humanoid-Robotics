@@ -1,9 +1,9 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
 
+// 1. ADD: Node.js Path Module import (CRITICAL FIX)
+const path = require('path'); 
+
+// @type JSDoc annotations allow editor autocompletion and type checking
 import {themes as prismThemes} from 'prism-react-renderer';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
@@ -28,15 +28,11 @@ const config = {
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'governorhouse', // Usually your GitHub org/user name.
   projectName: 'hackathon1-humanoid-robotics-book', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -79,6 +75,11 @@ const config = {
   ],
 
   themes: ['@docusaurus/theme-mermaid'],
+
+  // 2. CRITICAL FIX: Add Chatbot Plugin back using path.resolve
+  plugins: [
+    path.resolve(__dirname, 'src/plugins/chat-widget-plugin'), 
+  ],
 
   markdown: {
     mermaid: true,
