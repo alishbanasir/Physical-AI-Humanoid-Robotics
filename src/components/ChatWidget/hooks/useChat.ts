@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
 import type { Message, ChatRequest, ChatResponse } from '../types';
 
 // API_BASE_URL: Ensures it points to the local FastAPI server
-const API_BASE_URL = 'http://localhost:8000'; // <-- Direct URL use karein
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://alishba-nasir-humanoid-backend.hf.space';
 const SESSION_STORAGE_KEY = 'chatbot_session_id';
 
 interface UseChatReturn {
